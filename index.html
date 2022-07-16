@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danny's Daily Journal</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+
+<body>
+    <header>
+        <h1>Danny's Daily Journal<img class="pencil-icon2" src="images/Pencil-icon.png"></h1>
+    </header>
+
+    <main id="container">
+        <form class="entryForm">
+            <fieldset class="field">
+                <label for="entryDate" class="fieldLabel">Date:</label>
+                <input type="date" name="entryDate" class="entryForm__date">
+            </fieldset>
+            <fieldset class="field">
+                <label for="conceptText" class="fieldLabel">Concepts covered:</label>
+                <!-- <input type="text" name="conceptText" class="entryForm__concepts"> -->
+                <textarea id="test2" name="conceptTextArea" class="entryForm__concepts" rows="1" cols="40"></textarea>
+            </fieldset>
+            <fieldset class="field">
+                <label for="journalEntry" class="fieldLabel">Journal Entry:</label>
+                <textarea id="test" name="test" rows="10" cols="40"></textarea>
+            </fieldset>
+            <fieldset class="field">
+                <label for="mood" class="fieldLabel">Mood:</label>
+                <select>
+                    <option value="" disabled selected>how do you feel?</option>
+                    <option value="happy">Happy</option>
+                    <option value="fine">Fine</option>
+                    <option value="sad">Sad</option>
+                </select>
+            </fieldset>
+            <fieldset class="last-field">
+                <button type="button">Record Journal Entry</button>
+            </fieldset>
+        </form>
+        <article id="entries">
+
+        </article>
+    </main>
+
+    <footer>
+        <b>yo, click pic</b><br>
+        <a href="https://github.com/dannyherrmann" target="_blank">
+            <img src="images/dannyface.JPG" class="face">
+        </a>
+    </footer>
+
+</body>
+</html>

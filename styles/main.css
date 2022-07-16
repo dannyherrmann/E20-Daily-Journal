@@ -1,0 +1,65 @@
+.journalEntry {
+    position: relative;
+    bottom: 50px;
+}
+
+.entryForm {
+    display: flex;
+    flex-direction: column;
+}
+
+.entryForm__date {
+    margin: 10px;
+    border: 1px black solid;
+}
+
+.pencil-icon2 {
+    height: 30px;
+    margin-left: 10px;
+}
+
+.face {
+    display: block;
+    max-width: 100px;
+    max-height: 70px;
+    width: auto;
+    height: auto;
+}
+
+h1 {
+    font-family: cursive;
+}
+
+footer {
+    font-family: cursive;
+    font-size: smaller;
+}
+
+label {
+    font-family: cursive;
+    display: flex;
+}
+
+.last-field {
+    margin-bottom: 20px;
+    border: 1px white solid;
+}
+
+.field {
+    margin-bottom: 20px;
+    border: 2px black dashed;
+    border-inline: -100px;
+    background-color: lightgray;
+}
+
+.fieldLabel {
+    margin-bottom: 5px;
+}
+
+button {
+    margin-inline: -10px;
+}
+
+.entryForm__date {
+    margin-inline: 1px;
+}
