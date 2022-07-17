@@ -27,16 +27,17 @@
 }
 
 h1 {
-    font-family: cursive;
+    /* font-family: cursive; */
+    font-family: 'Cormorant Garamond', serif;
 }
 
 footer {
-    font-family: cursive;
+    font-family: 'Cormorant Garamond', serif;
     font-size: smaller;
 }
 
 label {
-    font-family: cursive;
+    font-family: 'Cormorant Garamond', serif;
     display: flex;
 }
 
