@@ -25,7 +25,6 @@
   "entries": []
 
 }
-
 ```
 
 #### Step #2: Once you have your basic journalEntires.json file created - serve the .json file to port #8088 using json-server on your local machine.
@@ -33,7 +32,6 @@
 #### Step #3: Clone this repo by pasting below command in your terminal: 
 ```
 git clone git@github.com:dannyherrmann/E20-Daily-Journal.git
-
 ```
 #### Step #4: cd into the cloned repo and serve it to any local port that is not port 8088
 
