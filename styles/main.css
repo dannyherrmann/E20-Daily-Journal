@@ -1,0 +1,144 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+  
+.sidenav {
+  height: 100%;
+  width: 160px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: black;
+  overflow-x: hidden;
+  padding-top: 20px;
+  border: white 3px solid;
+  font-size: 15px;
+}
+  
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  color: #818181;
+  display: block;
+}
+  
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.entry a:hover {
+  color: #f1f1f1;
+}
+
+.face {
+  display: block;
+  max-width: 100px;
+  max-height: 90px;
+  width: auto;
+  height: auto;
+  padding-left: 25px;
+}
+
+.circle {
+  border: black 5px solid;
+  border-radius: 50px;
+  margin-left: 40px;
+  margin-top: 40px;
+  width: 339px;
+  height: 177px;
+  background-color: white;
+  top: 100px;
+  position: absolute;
+}
+
+.notebook {
+  border-radius: 10px;
+  width: 800px;
+  height: 550px;
+  margin: 0 auto;
+  margin-top: 100px;
+  background-color: white;
+  box-shadow: 5px 10px #888;
+  font-size: 15px;
+  padding: 10px;
+}
+
+body {
+  background-image: url('compositionNotebook.jpeg');
+}
+
+nav {
+  background-color: #111;
+  border: white 3px solid;
+}
+
+.topnav h1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  list-style: none;
+  height: 60px;
+  text-decoration: none;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  color: white;
+  font-size: 20px;
+}
+
+.pencil-icon2 {
+  height: 30px;
+  margin-left: 10px;
+}
+
+
+.material-symbols-outlined {
+  color: white;
+  font-size: 50px;
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}
+
+.parentDiv {
+  display: block;
+  width: 400px;
+  padding-left: 5px;
+}
+
+.blackIcon {
+  color: black;
+}
+
+.iconText {
+  color: white;
+}
+
+.entryForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.field {
+  margin-bottom: 20px;
+  border: 2px black dashed;
+  border-inline: -100px;
+  background-color: lightgray;
+}
+
+.fieldLabel {
+  margin-bottom: 5px;
+}
+
+label {
+  display: flex;
+}
+
+.entry {
+  padding-left: 30px;
+}
