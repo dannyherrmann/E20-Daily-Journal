@@ -27,7 +27,7 @@
 }
 ```
 
-##### Step #2: Once you have your basic journalEntires.json file created - serve the .json file to port #8088 using json-server on your local machine. See below example terminal command where "journalEntries.json" is the name of the entries json file you create.
+##### Step #2: Once you have your basic journalEntires.json file created - serve the .json file to port #8088 using json-server on your local machine. See below example terminal command where "journalEntries.json" is the name of the entries json file you created in step #1 above.
 ```
 json-server journalEntries.json -p 8088 -w
 ```
@@ -38,6 +38,6 @@ git clone git@github.com:dannyherrmann/E20-Daily-Journal.git
 ```
 ##### Step #4: cd into the cloned repo and serve it to any local port that is not port 8088 using "serve" command. 
 
-##### Step #5: Route to your localhost in any web browser like http://localhost:3000 and you should see below web page!
+##### Step #5: Route to your localhost in any web browser like http://localhost:3000 and you should see below web page! You will have no pre-existing entries. Just click on the "new entry" button to start adding some journal entries.
 
 ![alt text](styles/E20-Daily-Journal.JPG)
