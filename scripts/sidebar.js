@@ -1,18 +1,17 @@
 import { getEntries } from "./dataAccess.js";
 
 export const createSidebar = () => {
+  const entries = getEntries();
+  entries.sort((a, b) => b.id - a.id);
 
-    const entries = getEntries()
-    entries.sort((a, b) => b.id - a.id)
-    
-    const createSidenav = (entry) => {
+  const createSidenav = (entry) => {
     return `
     <div class="entry">
     <a id="viewEntry--${entry.id}">${entry.concept}</a>
-    </div>`
-    }
+    </div>`;
+  };
 
-    let html = `
+  let html = `
     <div class="sidenav">
         <img src="styles/dannyface.JPG" class="face">
         <div class="parentDiv">
@@ -21,7 +20,6 @@ export const createSidebar = () => {
         </div>
         ${entries.map(createSidenav).join("")}
     </div>
-    `
-    return html
-}
-
+    `;
+  return html;
+};

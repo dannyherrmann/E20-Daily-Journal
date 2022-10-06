@@ -1,9 +1,9 @@
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   margin: 0;
   padding: 0;
 }
-  
+
 .sidenav {
   height: 100%;
   width: 160px;
@@ -17,14 +17,14 @@ body {
   border: white 3px solid;
   font-size: 15px;
 }
-  
+
 .sidenav a {
   padding: 6px 8px 6px 16px;
   text-decoration: none;
   color: #818181;
   display: block;
 }
-  
+
 .sidenav a:hover {
   color: #f1f1f1;
 }
@@ -67,7 +67,7 @@ body {
 }
 
 body {
-  background-image: url('compositionNotebook.jpeg');
+  background-image: url("compositionNotebook.jpeg");
 }
 
 nav {
@@ -94,15 +94,10 @@ nav {
   margin-left: 10px;
 }
 
-
 .material-symbols-outlined {
   color: white;
   font-size: 50px;
-  font-variation-settings:
-  'FILL' 0,
-  'wght' 400,
-  'GRAD' 0,
-  'opsz' 48
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
 }
 
 .parentDiv {
