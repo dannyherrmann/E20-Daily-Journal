@@ -55,5 +55,5 @@ export const editEntry = async (object) => {
 
 export const deleteEntry = async (id) => {
   await fetch(`${API}/entries/${id}`, { method: "DELETE" });
-  document.dispatchEvent(new CustomEvent("stateChanged"));
+  document.dispatchEvent(new CustomEvent("initialRender"));
 };

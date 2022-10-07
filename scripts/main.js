@@ -38,7 +38,7 @@ const showLatestEntry = async () => {
   convertNotebookToEntry(entries[0]);
 }
 
-document.addEventListener("stateChanged", (e) => {
+document.addEventListener("initialRender", (e) => {
   initialRender();
 });
 
