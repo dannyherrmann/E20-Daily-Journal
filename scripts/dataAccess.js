@@ -36,6 +36,7 @@ export const addNewEntry = async (newEntry) => {
   const response = await fetch(`${API}/entries`, fetchOptions);
   const responseJson = await response.json(response);
   document.dispatchEvent(new CustomEvent("renderSidebar"));
+  document.dispatchEvent(new CustomEvent("showLatestEntry"));
 };
 
 export const editEntry = async (object) => {
@@ -49,6 +50,7 @@ export const editEntry = async (object) => {
   const response = await fetch(`${API}/entries/${object.id}`, fetchOptions);
   const responseJson = await response.json(response);
   document.dispatchEvent(new CustomEvent("renderSidebar"));
+  document.dispatchEvent(new CustomEvent("showLatestEntry"));
 };
 
 export const deleteEntry = async (id) => {

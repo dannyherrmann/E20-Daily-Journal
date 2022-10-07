@@ -9,15 +9,19 @@ import {
 } from "./dataAccess.js";
 import { createSidebar } from "./sidebar.js";
 import { welcomePage } from "./welcomePage.js";
+import { createTopNav } from "./topNav.js";
 
 const sidebar = document.querySelector("#sidebar");
 const notebook = document.querySelector(".notebook");
+const container = document.querySelector("#container");
+const topNav = document.querySelector(".topnav")
 
 const initialRender = async () => {
   await fetchEntries();
   await fetchMoods();
   sidebar.innerHTML = createSidebar();
   notebook.innerHTML = welcomePage();
+  topNav.innerHTML = createTopNav();
 };
 
 initialRender();
@@ -27,6 +31,13 @@ const renderSidebar = async () => {
   sidebar.innerHTML = createSidebar();
 };
 
+const showLatestEntry = async () => {
+  await fetchEntries()
+  const entries = getEntries();
+  entries.sort((objA, objB) => Number(objB.dateTime) - Number(objA.dateTime));
+  convertNotebookToEntry(entries[0]);
+}
+
 document.addEventListener("stateChanged", (e) => {
   initialRender();
 });
@@ -34,6 +45,10 @@ document.addEventListener("stateChanged", (e) => {
 document.addEventListener("renderSidebar", (e) => {
   renderSidebar();
 });
+
+document.addEventListener("showLatestEntry", (e) => {
+  showLatestEntry();
+})
 
 const convertNotebookToEntry = (entry) => {
   notebook.innerHTML = `
@@ -61,8 +76,6 @@ sidebar.addEventListener("click", (click) => {
     }
   }
 });
-
-const container = document.querySelector("#container");
 
 sidebar.addEventListener("click", (click) => {
   if (click.target.id.startsWith("createEntry")) {
@@ -104,22 +117,18 @@ container.addEventListener("click", (clickEvent) => {
     let concept = document.getElementById("concept")?.value;
     let journalEntry = document.getElementById("journalEntry")?.value;
     let mood = document.querySelector("select[name=mood]")?.value;
+    let dateTimeInitiated = Number(new Date())
 
     let newEntry = {
+      dateTime: dateTimeInitiated,
       date: date,
       concept: concept,
       journalEntry: journalEntry,
       moodId: mood,
     };
+
     addNewEntry(newEntry);
 
-    const displayNewEntry = async () => {
-      await fetchEntries();
-      const entries = getEntries();
-      entries.sort((a, b) => b.id - a.id);
-      convertNotebookToEntry(entries[0]);
-    };
-    displayNewEntry();
   }
 });
 
@@ -191,10 +200,11 @@ container.addEventListener("click", (click) => {
       "textarea[name='newJournalEntry']"
     ).value;
     const newMood = document.querySelector("select[name='mood']").value;
-
+    const dateTimeInitiated = Number(new Date())
     const entryId = parseInt(click.target.id.split("--")[1]);
 
     const dataToSendToAPI = {
+      dateTime: dateTimeInitiated,
       id: entryId,
       date: newDate,
       concept: newConcept,
@@ -204,16 +214,6 @@ container.addEventListener("click", (click) => {
 
     editEntry(dataToSendToAPI);
 
-    const displayNewEntry = async (id) => {
-      await fetchEntries();
-      const entries = getEntries();
-      for (const entry of entries) {
-        if (entry.id === id) {
-          convertNotebookToEntry(entry);
-        }
-      }
-    };
-    displayNewEntry(entryId);
   }
 });
 
@@ -221,10 +221,6 @@ container.addEventListener("click", (click) => {
   if (click.target.id.startsWith("deleteEntry--")) {
     const entryId = parseInt(click.target.id.split("--")[1]);
     deleteEntry(entryId);
-    notebook.innerHTML = `
-        <h1>Welcome to your daily journal!</h1>
-        <p>click on the links in sidebar to create a new entry or view old entries</p>  
-        `;
   }
 });
 
