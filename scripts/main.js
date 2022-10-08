@@ -7,21 +7,21 @@ import {
   editEntry,
   deleteEntry,
 } from "./dataAccess.js";
+import { createTopNav } from "./topNav.js";
 import { createSidebar } from "./sidebar.js";
 import { welcomePage } from "./welcomePage.js";
-import { createTopNav } from "./topNav.js";
 
+const container = document.querySelector("#container");
+const topNav = document.querySelector(".topnav");
 const sidebar = document.querySelector("#sidebar");
 const notebook = document.querySelector(".notebook");
-const container = document.querySelector("#container");
-const topNav = document.querySelector(".topnav")
 
 const initialRender = async () => {
   await fetchEntries();
   await fetchMoods();
+  topNav.innerHTML = createTopNav();
   sidebar.innerHTML = createSidebar();
   notebook.innerHTML = welcomePage();
-  topNav.innerHTML = createTopNav();
 };
 
 initialRender();
@@ -56,9 +56,9 @@ const convertNotebookToEntry = (entry) => {
     <span class="material-symbols-outlined blackIcon" id="editEntry--${entry.id}">edit_note</span>
     <span class="material-symbols-outlined blackIcon" id="deleteEntry--${entry.id}">delete</span>
     <ul>
-        <li>Date: ${entry.date}</li>
-        <li>Concept: ${entry.concept}</li>
-        <li>journalEntry: ${entry.journalEntry}</li>
+        <li>Date: ${entry.date}</li><br>
+        <li>Concept: ${entry.concept}</li><br>
+        <li>Journal Entry: ${entry.journalEntry}</li><br>
         <li>Mood: ${entry.mood.name}</li>
     </ul>
     </div>
